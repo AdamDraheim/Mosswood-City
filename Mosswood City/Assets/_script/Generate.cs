@@ -21,7 +21,7 @@ public class Generate : MonoBehaviour {
 
                 if(i != 0 && j != 0)
                 {
-                    height[i, j] = ((height[i - 1, j] + height[i, j - 1]) / 2) + (Random.Range(0, 10) - 5);
+                    height[i, j] = ((height[i - 1, j] + height[i, j - 1]) / 2) + (Random.Range(0, 3) - 1);
 
                     if(height[i, j] < -5)
                     {
@@ -53,7 +53,7 @@ public class Generate : MonoBehaviour {
                 {
                     toSpawn = street;
                 }
-                Instantiate(toSpawn, new Vector3(i, toSpawn.GetComponent<Collider>().bounds.size.y / 2, j), new Quaternion(0, 0, 0, 0));
+                Instantiate(toSpawn, new Vector3(i, toSpawn.GetComponent<Renderer>().bounds.size.y / 2, j), new Quaternion(0, 0, 0, 0));
 
             }
         }
